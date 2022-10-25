@@ -1,0 +1,5 @@
+Theano==1.0.4,
+numpy==1.14.2,
+nltk==3.2.2,
+scipy==0.18.1,
+--upgrade --no-deps https://github.com/Lasagne/Lasagne/archive/master.zip
