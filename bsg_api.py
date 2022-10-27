@@ -24,11 +24,11 @@ logger = logging.getLogger('werkzeug')
 logger.setLevel(logging.ERROR)
 endpoints = [
     {
-        'title': 'query recommendation prediction',
-        'description': 'computes nearest neighbours of all known words of a text query',
+        'title': 'nearest neighbour prediction for text queries',
+        'description': 'computes five nearest neighbours of each known word of a text query',
         'url': '<host>/recommendations',
         'query parameters': {
-            'query': 'The Full Text Query to be examined'
+            'query': 'The Full Text Query for which five Nearest Neighbours are to be predicted'
         }
     }
 ]
@@ -39,7 +39,7 @@ def get_endpoints():
     return jsonify({'endpoints': endpoints})
 
 
-@app.route('/recommendations', methods=['POST'])
+@app.route('/nearest_neighbours', methods=['POST'])
 def get_recommendations():
     query = request.args.get('query')
     if query is None:
