@@ -26,7 +26,7 @@ endpoints = [
     {
         'title': 'nearest neighbour prediction for text queries',
         'description': 'computes five nearest neighbours of each known word of a text query',
-        'url': '<host>/recommendations',
+        'url': '<host>/nearest_neighbours',
         'query parameters': {
             'query': 'The Full Text Query for which five Nearest Neighbours are to be predicted'
         }
@@ -40,7 +40,7 @@ def get_endpoints():
 
 
 @app.route('/nearest_neighbours', methods=['POST'])
-def get_recommendations():
+def get_nearest_neighbours_for_query():
     query = request.args.get('query')
     if query is None:
         abort(400, description='Parameter \'query\' not found. Please provide a text query to infer recommendations on.')
