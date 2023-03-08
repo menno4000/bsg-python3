@@ -1,6 +1,6 @@
 ## Bayesian Skip Gram (Python 3 capable implementation)
 
-This repository contains a fork of the [Bayesian Skip Gram](https://github.com/abrazinskas/BSG) implementation ready for use with Python 3 on Windows Systems.
+This repository contains a fork of the [Bayesian Skip Gram](https://github.com/abrazinskas/BSG) implementation ready for use with Python 3.10 on Windows Systems.
 
 ### Encoding Notice
 
@@ -13,7 +13,7 @@ On Unix Systems, adapt encodings from `'latin-1'` to `'utf-8'`
 
 To train the model, run the `run_bsg.py` script:
 ```
-python run_bsg_invoice.py --epochs=1 --alpha=0.005 --max_vocab_size=100000 --batch_size=500 --nr_neg_samples=10 --embedding_size=100
+THEANO_FLAGS='floatX=float32' python run_bsg_invoice.py --epochs=1 --alpha=0.005 --max_vocab_size=100000 --batch_size=500 --nr_neg_samples=10 --embedding_size=100
 ```
 
 To start the inference api, supply the `bsg_api.py` script with the trained model parent directory (in project root \output\ by default):
